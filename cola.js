@@ -8,6 +8,7 @@ export class ColaDeEspera {
   }
 
   entrar(persona) {
+    if (this.estaLlena()) throw new Error('La cola está llena');
     this.#personas.push(persona);
   }
 
