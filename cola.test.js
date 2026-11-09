@@ -51,3 +51,11 @@ test('B: al atender a alguien de una cola llena, deja de estar llena', () => {
   cola.atender();
   assert.equal(cola.estaLlena(), false);
 });
+
+test('E: nadie puede entrar en una cola llena', () => {
+  const cola = new ColaDeEspera(1);
+  cola.entrar('Ana');
+  assert.throws(() => cola.entrar('Luis'), { message: 'La cola está llena' });
+  assert.equal(cola.atender(), 'Ana');
+  assert.equal(cola.estaVacia(), true);
+});
