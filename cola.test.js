@@ -18,3 +18,10 @@ test('O: con una persona dentro, la cola ya no está vacía', () => {
   cola.entrar('Ana');
   assert.equal(cola.estaVacia(), false);
 });
+
+test('O: se atiende a la única persona y la cola vuelve a quedar vacía', () => {
+  const cola = new ColaDeEspera(3);
+  cola.entrar('Ana');
+  assert.equal(cola.atender(), 'Ana');
+  assert.equal(cola.estaVacia(), true);
+});
