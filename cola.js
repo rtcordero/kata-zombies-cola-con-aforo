@@ -1,8 +1,11 @@
 // cola.js
 export class ColaDeEspera {
   #personas = [];
+  #capacidad;
 
-  constructor(capacidad) {}
+  constructor(capacidad) {
+    this.#capacidad = capacidad;
+  }
 
   entrar(persona) {
     this.#personas.push(persona);
@@ -17,6 +20,6 @@ export class ColaDeEspera {
   }
 
   estaLlena() {
-    return false;
+    return this.#personas.length === this.#capacidad;
   }
 }
