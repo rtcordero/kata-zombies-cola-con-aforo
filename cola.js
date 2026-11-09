@@ -1,9 +1,15 @@
 // cola.js
 export class ColaDeEspera {
+  #persona;
+
   constructor(capacidad) {}
 
+  entrar(persona) {
+    this.#persona = persona;
+  }
+
   estaVacia() {
-    return true;
+    return this.#persona === undefined;
   }
 
   estaLlena() {
