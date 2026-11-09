@@ -43,3 +43,11 @@ test('B: la cola está llena justo al llegar a su capacidad', () => {
   cola.entrar('Luis');
   assert.equal(cola.estaLlena(), true);
 });
+
+test('B: al atender a alguien de una cola llena, deja de estar llena', () => {
+  const cola = new ColaDeEspera(2);
+  cola.entrar('Ana');
+  cola.entrar('Luis');
+  cola.atender();
+  assert.equal(cola.estaLlena(), false);
+});
