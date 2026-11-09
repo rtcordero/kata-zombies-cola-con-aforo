@@ -35,3 +35,11 @@ test('M: con varias personas, se atienden por orden de llegada', () => {
   assert.equal(cola.atender(), 'Luis');
   assert.equal(cola.atender(), 'Marta');
 });
+
+test('B: la cola está llena justo al llegar a su capacidad', () => {
+  const cola = new ColaDeEspera(2);
+  cola.entrar('Ana');
+  assert.equal(cola.estaLlena(), false);
+  cola.entrar('Luis');
+  assert.equal(cola.estaLlena(), true);
+});
