@@ -12,3 +12,9 @@ test('Z: una cola recién creada no está llena', () => {
   const cola = new ColaDeEspera(3);
   assert.equal(cola.estaLlena(), false);
 });
+
+test('O: con una persona dentro, la cola ya no está vacía', () => {
+  const cola = new ColaDeEspera(3);
+  cola.entrar('Ana');
+  assert.equal(cola.estaVacia(), false);
+});
