@@ -13,6 +13,7 @@ export class ColaDeEspera {
   }
 
   atender() {
+    if (this.estaVacia()) throw new Error('La cola está vacía');
     return this.#personas.shift();
   }
 
