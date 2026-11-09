@@ -4,6 +4,9 @@ export class ColaDeEspera {
   #capacidad;
 
   constructor(capacidad) {
+    if (!Number.isInteger(capacidad) || capacidad < 1) {
+      throw new RangeError('La capacidad tiene que ser un entero mayor que 0');
+    }
     this.#capacidad = capacidad;
   }
 
