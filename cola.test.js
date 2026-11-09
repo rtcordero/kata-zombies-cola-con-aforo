@@ -64,3 +64,9 @@ test('E: no se puede atender a nadie si la cola está vacía', () => {
   const cola = new ColaDeEspera(3);
   assert.throws(() => cola.atender(), { message: 'La cola está vacía' });
 });
+
+test('E: la capacidad tiene que ser un número entero mayor que cero', () => {
+  assert.throws(() => new ColaDeEspera(0), RangeError);
+  assert.throws(() => new ColaDeEspera(-1), RangeError);
+  assert.throws(() => new ColaDeEspera(1.5), RangeError);
+});
