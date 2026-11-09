@@ -1,2 +1,8 @@
 // cola.js
-export class ColaDeEspera {}
+export class ColaDeEspera {
+  constructor(capacidad) {}
+
+  estaVacia() {
+    return true;
+  }
+}
