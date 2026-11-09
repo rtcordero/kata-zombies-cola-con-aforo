@@ -25,3 +25,13 @@ test('O: se atiende a la única persona y la cola vuelve a quedar vacía', () =>
   assert.equal(cola.atender(), 'Ana');
   assert.equal(cola.estaVacia(), true);
 });
+
+test('M: con varias personas, se atienden por orden de llegada', () => {
+  const cola = new ColaDeEspera(3);
+  cola.entrar('Ana');
+  cola.entrar('Luis');
+  cola.entrar('Marta');
+  assert.equal(cola.atender(), 'Ana');
+  assert.equal(cola.atender(), 'Luis');
+  assert.equal(cola.atender(), 'Marta');
+});
