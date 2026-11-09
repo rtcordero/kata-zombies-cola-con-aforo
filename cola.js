@@ -8,6 +8,12 @@ export class ColaDeEspera {
     this.#persona = persona;
   }
 
+  atender() {
+    const persona = this.#persona;
+    this.#persona = undefined;
+    return persona;
+  }
+
   estaVacia() {
     return this.#persona === undefined;
   }
