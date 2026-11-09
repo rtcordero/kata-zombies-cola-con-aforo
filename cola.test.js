@@ -59,3 +59,8 @@ test('E: nadie puede entrar en una cola llena', () => {
   assert.equal(cola.atender(), 'Ana');
   assert.equal(cola.estaVacia(), true);
 });
+
+test('E: no se puede atender a nadie si la cola está vacía', () => {
+  const cola = new ColaDeEspera(3);
+  assert.throws(() => cola.atender(), { message: 'La cola está vacía' });
+});
