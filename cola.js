@@ -5,4 +5,8 @@ export class ColaDeEspera {
   estaVacia() {
     return true;
   }
+
+  estaLlena() {
+    return false;
+  }
 }
