@@ -22,3 +22,16 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm test
+
+  historial:
+    name: Cada paso de la kata hace lo que dice su commit
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Todo el historial, no solo el último commit.
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+      - run: npm run test:historial
