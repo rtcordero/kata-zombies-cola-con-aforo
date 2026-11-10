@@ -45,7 +45,7 @@ El código y el historial se escribieron con un agente de IA (Claude Code) a par
 
 El historial se generó de una vez a partir de los pasos del artículo. No es el registro de una sesión real de TDD a lo largo de días: es la reconstrucción fiel de esos pasos, para poder recorrerlos.
 
-[RUBÉN: qué revisaste y cómo, antes de publicar]
+La revisión también se hizo con agentes de IA especializados en TDD: recorrieron el historial commit a commit, rompieron el código a propósito para confirmar que los tests lo detectan y propusieron los retoques que recogen los últimos commits. La CI vuelve a comprobar en cada push que cada rojo falla y cada verde pasa (`npm run test:historial`).
 
 ## Licencia
 
