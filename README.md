@@ -36,7 +36,7 @@ Las letras I (interfaz) y S (simple) no tienen commits propios: no son pasos, si
 
 ## Versiones
 
-- Node.js 24.21.0 (`.node-version`). Cada commit se ha comprobado también con Node.js 26.13.0, y la CI pasa los tests en las dos versiones.
+- Node.js 24.22.2 (`.node-version`). Cada commit se ha comprobado también con Node.js 26.13.0, y la CI pasa los tests en las dos versiones.
 - Tests con `node:test` y `node:assert/strict`, sin librerías.
 
 ## Cómo se hizo
