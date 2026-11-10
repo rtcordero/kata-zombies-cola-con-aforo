@@ -30,6 +30,7 @@ Necesitas Node.js 24 o posterior (la versión fijada está en `.node-version`). 
 1. El historial: `git log --reverse --format=%s`. Cada mensaje empieza por la letra ZOMBIES del paso y acaba en su fase: `(rojo)`, `(verde)` o `(verde a la primera)`, para el test de límites que ya pasaba al escribirlo.
 2. [`cola.test.js`](cola.test.js): los diez tests, que se leen como la especificación de la cola.
 3. [`cola.js`](cola.js): la implementación final, y cómo creció con `git log -p cola.js`.
+4. [`scripts/comprobar-historial.sh`](scripts/comprobar-historial.sh): recorre el historial y falla si un commit «(rojo)» pasa o uno «(verde…)» falla. La CI lo ejecuta en cada push; en local, con `npm run test:historial`.
 
 Las letras I (interfaz) y S (simple) no tienen commits propios: no son pasos, sino lo que se vigila en todos. No hay commits de refactor porque, en cada ciclo, el artículo concluye que no había nada que limpiar.
 
@@ -40,7 +41,11 @@ Las letras I (interfaz) y S (simple) no tienen commits propios: no son pasos, si
 
 ## Cómo se hizo
 
-El código y el historial se escribieron con un agente de IA (Claude Code) a partir del artículo, siguiendo sus pasos en el mismo orden y con su mismo código. Se ejecutaron commit a commit con Node.js 24.21.0 y 26.13.0 para comprobar que cada rojo falla con el error que muestra el artículo y que cada verde pasa. Rubén Tejera lo revisará antes de publicarlo.
+El código y el historial se escribieron con un agente de IA (Claude Code) a partir del artículo, siguiendo sus pasos en el mismo orden y con su mismo código. Se ejecutaron commit a commit con Node.js 24.21.0 y 26.13.0 para comprobar que cada rojo falla con el error que muestra el artículo y que cada verde pasa.
+
+El historial se generó de una vez a partir de los pasos del artículo. No es el registro de una sesión real de TDD a lo largo de días: es la reconstrucción fiel de esos pasos, para poder recorrerlos.
+
+[RUBÉN: qué revisaste y cómo, antes de publicar]
 
 ## Licencia
 
