@@ -41,11 +41,9 @@ Las letras I (interfaz) y S (simple) no tienen commits propios: no son pasos, si
 
 ## Cómo se hizo
 
-El código y el historial se escribieron con un agente de IA (Claude Code) a partir del artículo, siguiendo sus pasos en el mismo orden y con su mismo código. Se ejecutaron commit a commit con Node.js 24.21.0 y 26.13.0 para comprobar que cada rojo falla con el error que muestra el artículo y que cada verde pasa.
+Desarrollado con el enfoque [IA Limpia](https://rubentejera.com/que-es-la-ia-limpia/): un agente de IA escribe el código siguiendo los pasos del artículo, los tests validan cada paso y el resultado se revisa y se aprueba a mano antes de publicarlo.
 
-El historial se generó de una vez a partir de los pasos del artículo. No es el registro de una sesión real de TDD a lo largo de días: es la reconstrucción fiel de esos pasos, para poder recorrerlos.
-
-La revisión también se hizo con agentes de IA especializados en TDD: recorrieron el historial commit a commit, rompieron el código a propósito para confirmar que los tests lo detectan y propusieron los retoques que recogen los últimos commits. La CI vuelve a comprobar en cada push que cada rojo falla y cada verde pasa (`npm run test:historial`).
+El historial reconstruye los pasos del artículo en su mismo orden, para poder recorrerlos uno a uno. La CI comprueba en cada push que cada rojo falla y cada verde pasa (`npm run test:historial`).
 
 ## Licencia
 
